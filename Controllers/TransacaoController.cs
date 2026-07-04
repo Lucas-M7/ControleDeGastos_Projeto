@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ControleGastosApi.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/transacoes")]
 public class TransacaoController : ControllerBase
 {
     private readonly ITransacaoService _transacaoService;

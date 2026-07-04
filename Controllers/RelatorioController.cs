@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ControleGastosApi.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/relatorios")]
 public class RelatorioController : ControllerBase
 {
     private readonly IRelatorioService _relatorioService;
