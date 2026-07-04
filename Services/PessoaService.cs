@@ -28,6 +28,11 @@ public class PessoaService : IPessoaService
             Idade = dto.Idade
         };
 
+        if (pessoa.Idade <= 0)
+        {
+            throw new ArgumentException("A idade não pode ser valor negativo e precisa ser maior que zero.");
+        }
+
         _context.Pessoas.Add(pessoa);
         await _context.SaveChangesAsync();
 
