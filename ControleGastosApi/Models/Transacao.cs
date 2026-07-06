@@ -16,6 +16,5 @@ public class Transacao
     public int PessoaId { get; set; }
 
     // Propriedade de navegação para acessar os dados da Pessoa a partir da Transação.
-    [JsonIgnore]
     public Pessoa? Pessoa { get; set; }
 }
