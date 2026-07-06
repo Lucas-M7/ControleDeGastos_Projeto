@@ -43,7 +43,7 @@ export interface PessoaTotal {
 }
 
 export interface RelatorioTotais {
-    pessoa: PessoaTotal[];
+    pessoas: PessoaTotal[];
     totalGeralReceitas: number;
     totalGeralDespesas: number;
     saldoLiquidoGeral: number;
