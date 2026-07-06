@@ -32,13 +32,11 @@ public class RelatorioService : IRelatorioService
             var receitas = pessoa.Transacoes.Where(t => t.Tipo == TipoTransacao.Receita).Sum(t => t.Valor);
             var despesas = pessoa.Transacoes.Where(t => t.Tipo == TipoTransacao.Despesa).Sum(t => t.Valor);
 
-            var pessoaTotal = new PessoaTotalDto
-            {
-                Nome = pessoa.Nome,
-                TotalReceitas = receitas,
-                TotalDespesas = despesas,
-                Saldo = receitas - despesas
-            };
+            var pessoaTotal = new PessoaTotalDto(
+                Nome: pessoa.Nome,
+                TotalReceitas: receitas,
+                TotalDespesas: despesas,
+                Saldo: receitas - despesas);
 
             relatorio.Pessoas.Add(pessoaTotal);
 
