@@ -3,6 +3,7 @@ import { PessoaForm } from "./components/Pessoas/PessoaForm";
 import { PessoaList } from "./components/Pessoas/PessoaList";
 import { TransacaoForm } from "./components/Transacoes/TransacaoForm";
 import { TransacaoList } from "./components/Transacoes/TransacaoList";
+import { RelatorioTotais } from "./components/Relatorios/RelatorioTotais";
 
 function App() {
   /*
@@ -91,7 +92,7 @@ function App() {
               marginTop: 0,
               borderBottom: "1px solid #eee",
               paddingBottom: "8px",
-              color: "#333"
+              color: "#333",
             }}
           >
             2. Lançamento de Transações
@@ -101,6 +102,34 @@ function App() {
             pessoasTrigger={atualizarPessoasTrigger} // Avisa o select para recarregar se uma pessoa nova for criada.
           />
           <TransacaoList atualizarTrigger={atualizarTransacoesTrigger} />
+        </section>
+
+        {/* Bloco 3: Consulta de Totais */}
+        <section
+          style={{
+            backgroundColor: "#fcfcfc",
+            padding: "20px",
+            borderRadius: "8px",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
+            marginTop: "32px"
+          }}
+        >
+          <h2
+            style={{
+              marginTop: 0,
+              borderBottom: "1px solid #eee",
+              paddingBottom: "8px",
+              color: "#333"
+            }}
+          >
+            3. Resumo e Consulta de Totais
+          </h2>
+          {/* O trigger aqui soma as duas ações, recarregando o relatório se pessoa OU transação mudar */}
+          <RelatorioTotais
+            atualizarTrigger={
+              atualizarPessoasTrigger + atualizarTransacoesTrigger
+            }
+          />
         </section>
       </main>
 
